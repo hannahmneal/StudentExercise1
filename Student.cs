@@ -31,10 +31,13 @@ namespace StudentExercises
         public string stuExercises {get; set;} = "";
         public List<Exercise> Assignment {get; set;}
 
+        public Student(string stuFirstName, string stuLastName, string stuSlack) {
+            Console.WriteLine($"{stuFirstName} {stuLastName}, {stuSlack}, Cohort {stuCohort}");
+        }
         public void ListStudentAssignments() {
 
             foreach (Exercise exercise in Assignment) {
-                Console.WriteLine($"{exercise.}")
+                Console.WriteLine($"EXERCISE: {exercise.exerciseName} LANGUAGE: {exercise.exerciseLanguage}");
             }
         }
 

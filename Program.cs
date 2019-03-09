@@ -19,6 +19,13 @@ namespace StudentExercises
              Exercise exercise3 = new Exercise("Nutshell", "Javascript", 3);
              Exercise exercise4 = new Exercise("Nutshell", "React", 4);
 
+            Cohort cohort29 = new Cohort("Cohort 29", "Andy");
+            Cohort cohort30 = new Cohort("Cohort 30", "Jisie");
+            Cohort cohort31 = new Cohort("Cohort 31", "Joe");
+
+            Student stu1 = new Student("Hannah", "Neal", "@hannahmneal", "Cohort 29" );
+            Student stu2 = new Student("" );
+            Student stu3 = new Student("Brian", "Neal", "@brianbneal" );
 
         }
     }
