@@ -9,39 +9,31 @@ namespace StudentExercises
             A student can only be in one cohort at a time
             A student can be working on many exercises at a time
          */
-        public Student(string argStuFirstName, string argStuLastName, string argStuSlack, int argStuCohort, string argStuExercises) {
+        public Student(string argStuFirstName, string argStuLastName, string argStuSlack, string argStuCohort) {
             stuFirstName = argStuFirstName;
             stuLastName = argStuLastName;
             stuSlack = argStuSlack;
             stuCohort = argStuCohort;
-            stuExercises = argStuExercises;
             Assignment = new List<Exercise>();
+
+            Console.WriteLine($"{stuFirstName} {stuLastName}, {stuSlack}, Cohort {stuCohort}");
         }
         /*
             Define student props.
-            - "stu" is abbreviation for "student".
-            - "Slack" is abbreviation for "SlackHandle".
+            1. First name
+            2. Last name
+            3. Slack handle
+            4. The student's cohort
+            5. The collection of exercises that the student is currently working on
 
          */
 
         public string stuFirstName {get; set;} = "";
         public string stuLastName {get; set;} = "";
         public string stuSlack {get; set;} = "";
-        public int stuCohort {get; set;} = 0;
-        public string stuExercises {get; set;} = "";
+        public string stuCohort {get; set;} = "";
+        // The collection of exercises the student is currently working on:
         public List<Exercise> Assignment {get; set;}
-
-        public Student(string stuFirstName, string stuLastName, string stuSlack) {
-            Console.WriteLine($"{stuFirstName} {stuLastName}, {stuSlack}, Cohort {stuCohort}");
-        }
-        public void ListStudentAssignments() {
-
-            foreach (Exercise exercise in Assignment) {
-                Console.WriteLine($"EXERCISE: {exercise.exerciseName} LANGUAGE: {exercise.exerciseLanguage}");
-            }
-        }
-
-
 
     }
 }

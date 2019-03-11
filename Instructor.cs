@@ -4,6 +4,18 @@ namespace StudentExercises
 {
     public class Instructor
     {
+        public Instructor(string argInstructFirstName, string argInstructLastName, string argInstructSlack, string argInstructCohort)
+        {
+            instructFirstName = argInstructFirstName;
+            instructLastName = argInstructLastName;
+            instructSlack = argInstructSlack;
+            instructCohort = argInstructCohort;
+
+            /*
+                You must also define a method to assign exercises to a student
+             */
+        }
+
         /*
             Define instructor props.
             - "stu" is abbreviation for "student".
@@ -15,18 +27,15 @@ namespace StudentExercises
         public string instructFirstName { get; set; } = "";
         public string instructLastName { get; set; } = "";
         public string instructSlack { get; set; } = "";
-        public int instructCohort { get; set; } = 0;
+        public string instructCohort { get; set; } = "";
 
-        public Instructor(string argInstructFirstName, string argInstructLastName, string argInstructSlack, int argInstructCohort)
-        {
-            instructFirstName = argInstructFirstName;
-            instructLastName = argInstructLastName;
-            instructSlack = argInstructSlack;
-            instructCohort = argInstructCohort;
+        /*
+            Instructions say, "Have each instructor assign 2 exercises to each of the students". Define a method here to do that.
+         */
 
-            /*
-                You must also define a method to assign exercises to a student
-             */
-        }
+         public void AssignExercise(Exercise assignment, Student student) {
+             student.Assignment.Add(assignment);
+         }
+
     }
 }
