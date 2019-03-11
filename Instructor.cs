@@ -11,6 +11,8 @@ namespace StudentExercises
             instructSlack = argInstructSlack;
             instructCohort = argInstructCohort;
 
+            Console.WriteLine($"{instructFirstName} {instructLastName}, SLACK: {instructSlack}, TEACHING: {instructCohort}");
+
             /*
                 You must also define a method to assign exercises to a student
              */

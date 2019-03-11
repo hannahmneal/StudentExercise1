@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace StudentExercises
 {
@@ -19,14 +20,33 @@ namespace StudentExercises
              Exercise exercise3 = new Exercise("Nutshell", "Javascript");
              Exercise exercise4 = new Exercise("Nutshell", "React");
 
-            Cohort cohort29 = new Cohort("Cohort 29", "Andy");
-            Cohort cohort30 = new Cohort("Cohort 30", "Jisie");
-            Cohort cohort31 = new Cohort("Cohort 31", "Joe");
+            Instructor instruct1 = new Instructor("Andy", "Collins", "@andycollins", "Cohort 29");
+            Instructor instruct2 = new Instructor("Steve", "Brownley", "@steve", "Cohort 30");
+            Instructor instruct3 = new Instructor("Jisie", "David", "@jisiedavid", "Cohort 31");
 
             Student stu1 = new Student("Hannah", "Neal", "@hannahmneal", "29" );
             Student stu2 = new Student("Dek", "Haji", "@dekhaji", "31");
             Student stu3 = new Student("Brian", "Neal", "@brianbneal", "30");
 
+            // Cohort cohort29 = new Cohort("Cohort 29", "Andy");
+            // Cohort cohort30 = new Cohort("Cohort 30", "Jisie");
+            // Cohort cohort31 = new Cohort("Cohort 31", "Joe");
+
+            Cohort c29 = new Cohort("Cohort 29");
+            c29.instructInCohort.Add(instruct1);
+            c29.studentInCohort.Add(stu1);
+
+            Cohort c30 = new Cohort("Cohort 30");
+            c30.instructInCohort.Add(instruct2);
+            c30.studentInCohort.Add(stu3);
+
+            Cohort c31 = new Cohort("Cohort 31");
+            c31.instructInCohort.Add(instruct3);
+            c31.studentInCohort.Add(stu2);
+
+            List<Student> student = new List<Student>() {
+                stu1, stu2, stu3
+            };
         }
     }
 }
