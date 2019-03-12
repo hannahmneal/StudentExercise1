@@ -16,7 +16,7 @@ namespace StudentExercises
             stuCohort = argStuCohort;
             Assignment = new List<Exercise>();
 
-            Console.WriteLine($"{stuFirstName} {stuLastName}, {stuSlack}, Cohort {stuCohort}");
+            // Console.WriteLine($"{stuFirstName} {stuLastName}, {stuSlack}, Cohort {stuCohort}");
         }
         /*
             Define student props.
@@ -24,8 +24,7 @@ namespace StudentExercises
             2. Last name
             3. Slack handle
             4. The student's cohort
-            5. The collection of exercises that the student is currently working on
-
+            5. The collection of exercises that the student is currently working on (this will be an "Exercise List"/"Assignment List")
          */
 
         public string stuFirstName {get; set;} = "";

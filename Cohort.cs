@@ -17,7 +17,7 @@ namespace StudentExercises
             instructInCohort = new List<Instructor>();
             studentInCohort = new List<Student>();
 
-            Console.WriteLine($"{cohortName}");
+            // Console.WriteLine($"{cohortName}");
         }
 
         public string cohortName { get; set; } = "";

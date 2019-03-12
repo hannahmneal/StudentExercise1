@@ -24,14 +24,13 @@ namespace StudentExercises
             Instructor instruct2 = new Instructor("Steve", "Brownley", "@steve", "Cohort 30");
             Instructor instruct3 = new Instructor("Jisie", "David", "@jisiedavid", "Cohort 31");
 
-            Student stu1 = new Student("Hannah", "Neal", "@hannahmneal", "29" );
-            Student stu2 = new Student("Dek", "Haji", "@dekhaji", "31");
-            Student stu3 = new Student("Brian", "Neal", "@brianbneal", "30");
+            Student stu1 = new Student("Hannah", "Neal", "@hannahmneal", "Cohort 29" );
+            Student stu2 = new Student("Dek", "Haji", "@dekhaji", "Cohort 31");
+            Student stu3 = new Student("Brian", "Neal", "@brianbneal", "Cohort 30");
 
-            // Cohort cohort29 = new Cohort("Cohort 29", "Andy");
-            // Cohort cohort30 = new Cohort("Cohort 30", "Jisie");
-            // Cohort cohort31 = new Cohort("Cohort 31", "Joe");
-
+            /*
+            Here, you are using the method in Cohort.cs to name a new cohort and create a list of students and instructors associated with the cohort you just named:
+             */
             Cohort c29 = new Cohort("Cohort 29");
             c29.instructInCohort.Add(instruct1);
             c29.studentInCohort.Add(stu1);
@@ -44,9 +43,42 @@ namespace StudentExercises
             c31.instructInCohort.Add(instruct3);
             c31.studentInCohort.Add(stu2);
 
-            List<Student> student = new List<Student>() {
+            /*
+            Here, you are creating a list of students and adding the student objects (created above) to it. These student lists will be used with the Instructor type to assign exercises to the students.
+            */
+
+            List<Student> studentList29 = new List<Student>() {
+                stu1
+            };
+            List<Student> studentList30 = new List<Student>() {
+                stu3
+            };
+            List<Student> studentList31 = new List<Student>() {
+                stu2
+            };
+            List<Student> allStudents= new List<Student>() {
                 stu1, stu2, stu3
             };
+
+            /*
+            Here, you are creating a list of Exercises and adding the student objects (created above) to it:
+            */
+
+            // List<Exercise> exerciseList = new List<Exercise>() {
+            //     exercise1,
+            //     exercise2,
+            //     exercise3,
+            //     exercise4
+            // };
+
+            foreach(Student student in allStudents) {
+                List<string> stuExercises = new List<string>();
+                foreach(Exercise stuExercise in student.Assignment) {
+                    stuExercises.Add(stuExercise.exerciseName);
+                }
+                Console.WriteLine($"{student.stuFirstName} {student.stuLastName} EXERCISE: {String.Join("," ,stuExercises)}");
+            }
+
         }
     }
 }
