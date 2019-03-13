@@ -4,12 +4,12 @@ namespace StudentExercises
 {
     public class Instructor
     {
-        public Instructor(string argInstructFirstName, string argInstructLastName, string argInstructSlack, string argInstructCohort)
+        public Instructor(string argInstructFirstName, string argInstructLastName, string argInstructSlack, Cohort argInstructCohort)
         {
             instructFirstName = argInstructFirstName;
             instructLastName = argInstructLastName;
             instructSlack = argInstructSlack;
-            instructCohort = argInstructCohort;
+            Cohort = argInstructCohort;
 
             // Console.WriteLine($"{instructFirstName} {instructLastName}, SLACK: {instructSlack}, TEACHING: {instructCohort}");
 
@@ -29,7 +29,7 @@ namespace StudentExercises
         public string instructFirstName { get; set; } = "";
         public string instructLastName { get; set; } = "";
         public string instructSlack { get; set; } = "";
-        public string instructCohort { get; set; } = "";
+        public Cohort Cohort {get; set;}
 
         /*
             Instructions say, "Have each instructor assign 2 exercises to each of the students". Define a method here to do that.
