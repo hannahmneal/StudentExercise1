@@ -19,13 +19,15 @@ namespace StudentExercises
              Exercise exercise2 = new Exercise("Welcome to Nashville", "Javascript");
              Exercise exercise3 = new Exercise("Nutshell", "Javascript");
              Exercise exercise4 = new Exercise("Nutshell", "React");
+             Exercise exercise5 = new Exercise("Capstone", "React");
+             Exercise exercise6 = new Exercise("LINQ Exercises", "C#");
 
             Instructor instruct1 = new Instructor("Andy", "Collins", "@andycollins", "Cohort 29");
             Instructor instruct2 = new Instructor("Steve", "Brownley", "@steve", "Cohort 30");
             Instructor instruct3 = new Instructor("Jisie", "David", "@jisiedavid", "Cohort 31");
 
             Student stu1 = new Student("Hannah", "Neal", "@hannahmneal", "Cohort 29" );
-            Student stu2 = new Student("Dek", "Haji", "@dekhaji", "Cohort 31");
+            Student stu2 = new Student("Joel", "Mondesir", "@joelmondesir", "Cohort 31");
             Student stu3 = new Student("Brian", "Neal", "@brianbneal", "Cohort 30");
 
             /*
@@ -50,12 +52,26 @@ namespace StudentExercises
             List<Student> studentList29 = new List<Student>() {
                 stu1
             };
+
+            // AssignExercise is in Instructor.cs; it is a method that adds the Exercise type from Exercise.cs to the Assignment list (type) in Student.cs; i.e., AssignExercise adds a new exercise to the Assignment list for each student object.
+
+            instruct1.AssignExercise(exercise5, stu1);
+            instruct1.AssignExercise(exercise6, stu1);
+
             List<Student> studentList30 = new List<Student>() {
                 stu3
             };
+
+            instruct2.AssignExercise(exercise4, stu3);
+            instruct2.AssignExercise(exercise5, stu3);
+
             List<Student> studentList31 = new List<Student>() {
                 stu2
             };
+
+            instruct3.AssignExercise(exercise2, stu2);
+            instruct3.AssignExercise(exercise3, stu2);
+
             List<Student> allStudents= new List<Student>() {
                 stu1, stu2, stu3
             };
@@ -64,19 +80,12 @@ namespace StudentExercises
             Here, you are creating a list of Exercises and adding the student objects (created above) to it:
             */
 
-            // List<Exercise> exerciseList = new List<Exercise>() {
-            //     exercise1,
-            //     exercise2,
-            //     exercise3,
-            //     exercise4
-            // };
-
             foreach(Student student in allStudents) {
                 List<string> stuExercises = new List<string>();
                 foreach(Exercise stuExercise in student.Assignment) {
                     stuExercises.Add(stuExercise.exerciseName);
                 }
-                Console.WriteLine($"{student.stuFirstName} {student.stuLastName} EXERCISE: {String.Join("," ,stuExercises)}");
+                Console.WriteLine($"{student.stuFirstName} {student.stuLastName} EXERCISE: {String.Join(", " ,stuExercises)}");
             }
 
         }

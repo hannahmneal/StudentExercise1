@@ -12,7 +12,7 @@ namespace StudentExercises
             exerciseLanguage = argExerciseLanguage;
             exerciseList = new List<Exercise>();
 
-            Console.WriteLine($"EXERCISE: {exerciseName}, LANGUAGE: {exerciseLanguage}");
+            // Console.WriteLine($"EXERCISE: {exerciseName} LANGUAGE: {exerciseLanguage}");
         }
 
         /*
