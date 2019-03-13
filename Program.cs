@@ -14,6 +14,14 @@ namespace StudentExercises
                 4. Create 3, or more, instructors and assign them to one of the cohorts.
                 5. Have each instructor assign 2 exercises to each of the students.
              */
+            /*
+            Here, you are using the method in Cohort.cs to name a new cohort and create a list of students and instructors associated with the cohort you just named:
+             */
+            Cohort c29 = new Cohort("Cohort 29");
+
+            Cohort c30 = new Cohort("Cohort 30");
+
+            Cohort c31 = new Cohort("Cohort 31");
 
              Exercise exercise1 = new Exercise("Celebrity Tribute", "HTML and CSS");
              Exercise exercise2 = new Exercise("Welcome to Nashville", "Javascript");
@@ -22,28 +30,15 @@ namespace StudentExercises
              Exercise exercise5 = new Exercise("Capstone", "React");
              Exercise exercise6 = new Exercise("LINQ Exercises", "C#");
 
-            Instructor instruct1 = new Instructor("Andy", "Collins", "@andycollins", "Cohort 29");
-            Instructor instruct2 = new Instructor("Steve", "Brownley", "@steve", "Cohort 30");
-            Instructor instruct3 = new Instructor("Jisie", "David", "@jisiedavid", "Cohort 31");
+            Instructor instruct1 = new Instructor("Andy", "Collins", "@andycollins", c29);
+            Instructor instruct2 = new Instructor("Steve", "Brownley", "@steve", c30);
+            Instructor instruct3 = new Instructor("Jisie", "David", "@jisiedavid", c31);
 
-            Student stu1 = new Student("Hannah", "Neal", "@hannahmneal", "Cohort 29" );
-            Student stu2 = new Student("Joel", "Mondesir", "@joelmondesir", "Cohort 31");
-            Student stu3 = new Student("Brian", "Neal", "@brianbneal", "Cohort 30");
 
-            /*
-            Here, you are using the method in Cohort.cs to name a new cohort and create a list of students and instructors associated with the cohort you just named:
-             */
-            Cohort c29 = new Cohort("Cohort 29");
-            c29.instructInCohort.Add(instruct1);
-            c29.studentInCohort.Add(stu1);
+            Student stu1 = new Student("Hannah", "Neal", "@hannahmneal", c29 );
+            Student stu2 = new Student("Joel", "Mondesir", "@joelmondesir", c31);
+            Student stu3 = new Student("Brian", "Neal", "@brianbneal", c30);
 
-            Cohort c30 = new Cohort("Cohort 30");
-            c30.instructInCohort.Add(instruct2);
-            c30.studentInCohort.Add(stu3);
-
-            Cohort c31 = new Cohort("Cohort 31");
-            c31.instructInCohort.Add(instruct3);
-            c31.studentInCohort.Add(stu2);
 
             /*
             Here, you are creating a list of students and adding the student objects (created above) to it. These student lists will be used with the Instructor type to assign exercises to the students.
@@ -85,7 +80,7 @@ namespace StudentExercises
                 foreach(Exercise stuExercise in student.Assignment) {
                     stuExercises.Add(stuExercise.exerciseName);
                 }
-                Console.WriteLine($"{student.stuFirstName} {student.stuLastName} EXERCISE: {String.Join(", " ,stuExercises)}");
+                Console.WriteLine($"{student.stuFirstName} {student.stuLastName} EXERCISE: {String.Join(", " ,stuExercises)} {student.Cohort.cohortName}");
             }
 
         }
